@@ -1,0 +1,47 @@
+
+.nav-link{
+    color: black;
+}
+
+.nav-link:hover{
+    color: yellow;
+    font-weight: bold;
+    background-color: red;
+    border-radius: 10px;
+}
+
+.transparentbox{
+    width: 100%;
+    height: 470px;
+    background-color: lightgray;
+    border: 1px solid #CD853F;
+    opacity: 0.6;
+}
+.transparentbox p{
+    margin-top: 10%;
+    font-weight: bold;
+    font-size: 60px;
+    font-family:cursive,monospace;
+    color: darkred;
+    text-align: center;
+}
+.halfcircle{
+    height: 75px;
+    width: 150px;
+    border-radius: 90px 90px 0 0;
+    margin: 0px;
+    background-color:rgb(36, 88, 36);
+}
+.halfcircleBottom{
+    height: 75px;
+    width: 150px;
+    border-radius: 0px 0px 90px 90px;
+    margin: 0px;
+    background-color: rgb(74, 212, 74);
+}
+.box1 p{
+   font-weight: bold;
+   color: white;
+   font-family: cursive;
+   text-align: center;
+}

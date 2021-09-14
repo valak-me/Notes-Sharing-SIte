@@ -1,0 +1,64 @@
+{% extends 'user_navigation.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<div class="container mt-5">
+    <h2 class="text-center">UPLOAD NOTES</h2><hr>
+<div class="row">
+    <div class="col-sm-6">
+        
+        <form method="POST" enctype="multipart/form-data"> 
+            {% csrf_token %}
+            <select class="form-control" name="branch">
+                <option value="">--Select Branch--</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="Civil">Civil</option>
+                <option value="Electrical">Electrical</option>
+                <option value="Electronics">Electronics</option>
+            </select>
+            <label > Subject</label>
+            <input type="text" class="form-control" placeholder="Enter Subject" name="subject">
+            <label > Notes File</label>
+            <input type="file" class="form-control" name="notesfile">
+            <label >File type</label>
+            <select class="form-control" name="filetype">
+                <option value="">--Select File Type--</option>
+                <option value="PDF">PDF</option>
+                <option value="PPT">PPT</option>
+                <option value="DOC">DOC/DOCX</option>
+                <option value="TXT">TXT</option>
+                <option value="Image">Image</option>
+                <option value="ZIP">ZIP/RAR</option>
+            </select>
+            <label > Description</label>
+            <textarea class="form-control" name="description">
+              
+            </textarea>
+
+     <input type="submit" class="btn btn-danger text-white mt-2" value="SUBMIT">
+        </form>
+    </div>
+
+    <div class="col-sm-6">
+        <img src="{% static 'images/notesupload.jpg' %}" alt="img gyab" style="height: 400px; margin-left: 100px; border-radius: 10px;">
+    </div>
+</div>
+</div>
+
+
+{% ifequal error "no" %}
+<script>
+    alert('Notesuploaded Successfully');
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+    alert('Something went wrong,Try again');
+</script>
+{% endifequal %}
+
+{% endblock %}

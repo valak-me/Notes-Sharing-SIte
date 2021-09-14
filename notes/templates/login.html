@@ -1,0 +1,42 @@
+{% extends 'navigation.html' %}
+{% load static %}
+{% block content %}
+
+
+{% ifequal error "no" %}
+<script>
+    alert('Logged IN Successfully');
+    window.location=("{% url 'profile' %}");
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+    alert('Invalid Login Credentials,Try again');
+</script>
+{% endifequal %}
+
+
+<div class="container mt-5">
+<div class="row">
+    <div class="col-sm-6">
+        <h2 class="text-center">NEW CUSTOMERS</h2><hr>
+        <p>
+            By creating an Account with our website, u will be able to move through the Notesuploading and downlaoding process and more..
+        </p>
+        <center><a href="{% url 'signup' %}" class="btn btn-danger text-white text-center mt-5"> CREATE AN ACCOUNT</a></center>
+    </div>
+    <div class="col-sm-6">
+        <h2 class="text-center">USER LOGIN</h2><hr>
+        <form method="post">
+            {% csrf_token %}
+            <label > Email Address</label>
+            <input type="email" class="form-control" placeholder="Enter EmalId" name="emailid" id="">
+            <label > Password</label>
+            <input type="password" class="form-control" placeholder="Enter Password" name="pwd">
+           <center> <input type="submit" class="btn btn-danger text-white mt-3" value="Login"></center>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}
